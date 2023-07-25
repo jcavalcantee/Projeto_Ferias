@@ -1,21 +1,29 @@
 package Pedidos;
 import Cardapio.*;
+import Carrinho.*;
 import java.util.Scanner;
 
 public class Pedidos {
-    Scanner sc = new Scanner(System.in);
-    public int escolha;
+    
+    private int escolha;
+    private static float subTotal;
 
-    public void pedidoCliente() {
+    public static void pedidoCliente() {
         System.out.print("Escolha o produto que deseja adicionar ao carrinho, pelo ID: ");
+        Scanner sc = new Scanner(System.in);
         int idProduto = sc.nextInt();
 
         System.out.print("\nAgora digite a quantidade que deseja adicionar: ");
         int qtd = sc.nextInt();
 
         float valorUnitario = calculoValor(idProduto, qtd);
-        float subTotal = qtd * valorUnitario;
+        subTotal = qtd * valorUnitario;
         System.out.format("Subtotal: R$%.2f", subTotal);
+        Carrinho.carrinho();
+    }
+
+    public static float getSubTotal() {
+        return subTotal;
     }
 
     private int idProduto;
