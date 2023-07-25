@@ -24,7 +24,7 @@ public class Carrinho {
             System.out.println("O valor total do seu pedido é: R$" + Pedidos.getSubTotal());
         } else if (r1.equalsIgnoreCase("N") && count != 0){
             total = Pedidos.getSubTotal() + total;
-            System.out.println("O valor total do seu pedido é: R$" + total);
+            System.out.format("O valor total do seu pedido é: R$%.2f", total);
         }
     }
 }
