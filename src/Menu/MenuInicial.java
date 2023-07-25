@@ -1,11 +1,14 @@
 package Menu;
 import java.util.Scanner;
-import Menu.InfoMenu.Informacoes;
+import Menu.*;
+import InfoMenu.Informacoes;
 
 public class MenuInicial {
     Scanner sc = new Scanner(System.in);
 
-    public void menuPrincipal(){
+    public void menuPrincipal() {
+        Informacoes informacoes = new Informacoes();
+         MenuTeste menuTest = new MenuTeste();
         boolean sair = false;
         do {
             System.out.println("\n--------------------------------------------------------------------------------------------\n");
@@ -26,10 +29,13 @@ public class MenuInicial {
 
             switch (opcao) {
 			case 1:
-                Menu.InfoMenu.Informacoes();
+                informacoes.instrucoes();
+                break;
+            case 2:
+                  menuTest.menuTeste();
                 break;
             
-                
+            }    
 
         } while(sair == false);
     }

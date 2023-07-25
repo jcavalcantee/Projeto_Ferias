@@ -1,4 +1,4 @@
-package InfoMenu;
+package Menu.InfoMenu;
 
 public class Informacoes {
     public static void instrucoes() {
